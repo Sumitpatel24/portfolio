@@ -1,0 +1,200 @@
+/* Google Font */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#ffffff;
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+}
+
+section{
+
+    padding:100px 0;
+
+    position:relative;
+
+}
+
+/*==============================
+        CURSOR GLOW
+==============================*/
+
+.cursor-glow{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(59,130,246,.35) 0%,
+    rgba(59,130,246,.15) 45%,
+    transparent 75%);
+
+    filter:blur(35px);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:9999;
+
+    transition:
+        left .08s linear,
+        top .08s linear,
+        width .3s,
+        height .3s,
+        background .4s;
+
+    mix-blend-mode:screen;
+
+}
+
+/*=========================================
+        SCROLL REVEAL
+=========================================*/
+
+.home-content,
+.home-image,
+.about-image,
+.about-content,
+.skills-left,
+.skills-right,
+.project-card,
+.contact-info,
+.contact-form,
+.footer-content{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================
+        ACTIVE NAVBAR LINK
+=========================================*/
+
+.navbar ul li a{
+
+    position:relative;
+
+    transition:.35s ease;
+
+}
+
+/* Active Link */
+
+.navbar ul li a.active{
+
+    color:#3B82F6;
+
+}
+
+/* Underline */
+
+.navbar ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#3B82F6;
+
+    border-radius:20px;
+
+    transition:.35s ease;
+
+}
+
+/* Hover */
+
+.navbar ul li a:hover::after{
+
+    width:100%;
+
+}
+
+/* Active */
+
+.navbar ul li a.active::after{
+
+    width:100%;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,.6);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .navbar ul li a.active{
+
+        color:#60A5FA;
+
+    }
+
+}

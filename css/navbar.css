@@ -1,0 +1,75 @@
+
+/*=========================================
+        ACTIVE NAVBAR LINK
+=========================================*/
+
+.navbar ul li a{
+
+    position:relative;
+
+    transition:.35s ease;
+
+}
+
+/* Active Link */
+
+.navbar ul li a.active{
+
+    color:#3B82F6;
+
+}
+
+/* Underline */
+
+.navbar ul li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#3B82F6;
+
+    border-radius:20px;
+
+    transition:.35s ease;
+
+}
+
+/* Hover */
+
+.navbar ul li a:hover::after{
+
+    width:100%;
+
+}
+
+/* Active */
+
+.navbar ul li a.active::after{
+
+    width:100%;
+
+    box-shadow:
+        0 0 12px rgba(59,130,246,.6);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .navbar ul li a.active{
+
+        color:#60A5FA;
+
+    }
+
+}

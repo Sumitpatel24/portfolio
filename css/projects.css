@@ -1,0 +1,682 @@
+/*=========================================
+            PROJECTS SECTION
+=========================================*/
+
+.projects{
+
+    position:relative;
+
+    padding:120px 0;
+
+    background:#0f172a;
+
+    overflow:hidden;
+
+}
+
+/*=========================================
+            BACKGROUND
+=========================================*/
+
+.projects-bg{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(59,130,246,.18),
+    transparent 40%),
+
+    radial-gradient(circle at bottom right,
+    rgba(6,182,212,.12),
+    transparent 45%);
+
+}
+
+.projects .container{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/*=========================================
+            CONTAINER
+=========================================*/
+
+.projects-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:60px;
+
+}
+
+/*=========================================
+        FEATURED PROJECT
+=========================================*/
+
+.featured-project{
+
+    display:grid;
+
+    grid-template-columns:1.1fr 1fr;
+
+    gap:50px;
+
+    align-items:center;
+
+}
+
+/*=========================================
+            PROJECT CARD
+=========================================*/
+
+.project-card{
+
+    position:relative;
+
+    background:rgba(20,35,70,.65);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease,
+        opacity .7s ease;
+
+}
+
+/*=========================================
+            IMAGE
+=========================================*/
+
+.project-image{
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:18px;
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+
+}
+
+/*=========================================
+            CONTENT
+=========================================*/
+
+.project-content h3{
+
+    font-size:34px;
+
+    color:#fff;
+
+    margin:15px 0;
+
+    transition:.35s;
+
+}
+
+.project-content p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+/*=========================================
+            NUMBER
+=========================================*/
+
+.project-number{
+
+    color:#60A5FA;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+
+}
+
+.project-card:hover .project-number{
+
+    color:#7DD3FC;
+
+}
+
+/*=========================================
+            TECH STACK
+=========================================*/
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+.tech-stack span{
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(59,130,246,.35);
+
+    color:#60A5FA;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+/*=========================================
+            BUTTONS
+=========================================*/
+
+.project-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+    position:relative;
+
+    z-index:10;
+
+    flex-direction:column;
+
+}
+
+/*=========================================
+            GRID
+=========================================*/
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+
+/*=========================================
+        CARD HOVER EFFECT
+=========================================*/
+
+.project-card:hover{
+
+    border-color:rgba(59,130,246,.45);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        0 0 80px rgba(59,130,246,.18),
+        0 0 150px rgba(59,130,246,.08);
+
+}
+
+/*=========================================
+        SHINE EFFECT
+=========================================*/
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-60%;
+
+    width:80px;
+
+    height:300%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.18),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.project-card:hover::before{
+
+    left:150%;
+
+}
+
+/*=========================================
+        IMAGE
+=========================================*/
+
+.project-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle,
+
+    transparent,
+
+    rgba(59,130,246,.22));
+
+    opacity:0;
+
+    transition:.45s;
+
+    pointer-events:none;
+
+}
+
+.project-card:hover .project-image::before{
+
+    opacity:1;
+
+}
+
+.project-card:hover .project-image img{
+
+    transform:scale(1.08);
+
+    filter:brightness(1.08);
+
+}
+/*=========================================
+        IMAGE OVERLAY
+=========================================*/
+
+.project-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.15)
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+    pointer-events:none;
+
+}
+
+.project-card:hover .project-image::after{
+
+    opacity:1;
+
+}
+
+/*=========================================
+        TITLE
+=========================================*/
+
+.project-card:hover h3{
+
+    letter-spacing:1px;
+
+}
+
+/*=========================================
+        TECH STACK
+=========================================*/
+
+.tech-stack span:hover{
+
+    background:#3B82F6;
+
+    color:#fff;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 0 18px rgba(59,130,246,.45);
+
+}
+
+/*=========================================
+        BUTTONS
+=========================================*/
+
+.project-buttons .btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.project-buttons .btn::after{
+
+    content:"→";
+
+    transition:.35s;
+
+}
+
+.project-buttons .btn:hover::after{
+
+    transform:translateX(8px);
+
+}
+
+/*=========================================
+        FLOATING GLOW
+=========================================*/
+
+.projects::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    left:-180px;
+    top:120px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(59,130,246,.22),
+    transparent 70%);
+
+    filter:blur(80px);
+
+    animation:projectGlow1 10s ease-in-out infinite;
+
+}
+
+.projects::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:380px;
+    height:380px;
+
+    right:-120px;
+    bottom:60px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(6,182,212,.18),
+    transparent 70%);
+
+    filter:blur(70px);
+
+    animation:projectGlow2 12s ease-in-out infinite;
+
+}
+
+/*=========================================
+        KEYFRAMES
+=========================================*/
+
+@keyframes projectGlow1{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes projectGlow2{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+    .featured-project{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .project-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .project-content h3{
+
+        font-size:28px;
+
+    }
+
+    .project-buttons .btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    min-width:160px;
+
+    transition:.35s;
+
+}
+
+}
+
+/*=========================================
+        JS REVEAL
+=========================================*/
+
+.project-card.show-project{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================
+        ANIMATED BORDER
+=========================================*/
+
+
+.project-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:25px;
+
+    padding:2px;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background:
+    linear-gradient(
+        45deg,
+        transparent,
+        rgba(59,130,246,.6),
+        transparent,
+        rgba(6,182,212,.6),
+        transparent
+    );
+
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.project-card:hover::after{
+
+    opacity:1;
+
+}
+
+.project-buttons .btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    min-width:210px;
+
+}
+
+.disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+    background:transparent;
+
+}
