@@ -113,47 +113,37 @@ const orbit = document.querySelector(".orbit");
 const ring1 = document.querySelector(".orbit-ring1");
 const ring2 = document.querySelector(".orbit-ring2");
 
-icons.forEach(icon=>{
+icons.forEach(icon => {
 
-    icon.addEventListener("mouseenter",()=>{
+    icon.addEventListener("mouseenter", () => {
 
-        orbit.style.animationPlayState="paused";
-        ring1.style.animationPlayState="paused";
-        ring2.style.animationPlayState="paused";
+        orbit.style.animationPlayState = "paused";
+        ring1.style.animationPlayState = "paused";
+        ring2.style.animationPlayState = "paused";
 
         updateSkill(icon);
 
     });
 
-    icon.addEventListener("mouseleave",()=>{
+    icon.addEventListener("mouseleave", () => {
 
-        orbit.style.animationPlayState="running";
-        ring1.style.animationPlayState="running";
-        ring2.style.animationPlayState="running";
-
-        if(window.innerWidth>768){
-
-            hideSkill();
-
-        }
+        orbit.style.animationPlayState = "running";
+        ring1.style.animationPlayState = "running";
+        ring2.style.animationPlayState = "running";
 
     });
 
-    icon.addEventListener("click",()=>{
+    icon.addEventListener("click", () => {
 
-        if(window.innerWidth<=768){
+        updateSkill(icon);
 
-            if(icon.classList.contains("active")){
+    });
 
-                hideSkill();
+    icon.addEventListener("touchstart", (e) => {
 
-            }else{
+        e.preventDefault();
 
-                updateSkill(icon);
-
-            }
-
-        }
+        updateSkill(icon);
 
     });
 
