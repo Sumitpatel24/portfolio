@@ -145,3 +145,33 @@ revealElements.forEach(el=>{
     revealObserver.observe(el);
 
 });
+
+/*=========================================
+        MOBILE MENU
+=========================================*/
+
+const menuBtn = document.querySelector(".menu-btn");
+
+const navbar = document.querySelector(".navbar");
+
+const navLinks = document.querySelectorAll(".nav-links a");
+
+menuBtn.addEventListener("click", () => {
+
+    navbar.classList.toggle("active");
+
+    menuBtn.classList.toggle("active");
+
+});
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navbar.classList.remove("active");
+
+        menuBtn.classList.remove("active");
+
+    });
+
+});
