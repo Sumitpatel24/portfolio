@@ -124,16 +124,23 @@
 }
 
 .nav-links a:hover{
-
+    
     color:#3B82F6;
 
 }
 
 .nav-links a:hover::after{
-
+    
     width:100%;
 
 }
+
+.logo:hover{
+
+    color:#60A5FA;
+    
+}
+
 
 /* ================= MENU ================= */
 

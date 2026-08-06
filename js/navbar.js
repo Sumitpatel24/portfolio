@@ -1,9 +1,48 @@
 // ==========================================
-// ACTIVE NAVBAR
+// NAVBAR.JS
+// ==========================================
+
+// Mobile Menu Elements
+const menuBtn = document.querySelector(".menu-btn");
+const navbar = document.querySelector(".navbar");
+const navLinks = document.querySelectorAll(".navbar a");
+
+// ==========================================
+// MOBILE MENU TOGGLE
+// ==========================================
+
+if (menuBtn && navbar) {
+
+    menuBtn.addEventListener("click", () => {
+
+        navbar.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+
+    });
+
+}
+
+// ==========================================
+// CLOSE MENU AFTER CLICKING A LINK
+// ==========================================
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if (navbar) navbar.classList.remove("active");
+
+        if (menuBtn) menuBtn.classList.remove("active");
+
+    });
+
+});
+
+// ==========================================
+// ACTIVE NAVBAR LINK
 // ==========================================
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar a");
 
 window.addEventListener("scroll", () => {
 
@@ -14,8 +53,10 @@ window.addEventListener("scroll", () => {
         const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.offsetHeight;
 
-        if (window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight) {
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
 
             current = section.getAttribute("id");
 
@@ -34,5 +75,37 @@ window.addEventListener("scroll", () => {
         }
 
     });
+
+});
+
+// ==========================================
+// CLOSE MENU ON SCROLL (MOBILE)
+// ==========================================
+
+window.addEventListener("scroll", () => {
+
+    if (window.innerWidth <= 768) {
+
+        if (navbar) navbar.classList.remove("active");
+
+        if (menuBtn) menuBtn.classList.remove("active");
+
+    }
+
+});
+
+// ==========================================
+// CLOSE MENU WHEN WINDOW IS RESIZED
+// ==========================================
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 768) {
+
+        if (navbar) navbar.classList.remove("active");
+
+        if (menuBtn) menuBtn.classList.remove("active");
+
+    }
 
 });
