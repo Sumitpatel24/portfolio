@@ -645,12 +645,30 @@
 
     border-radius:22px;
 
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.35s ease;
+
     padding:40px;
 
     box-shadow:
 
     0 20px 60px rgba(0,0,0,.45),
     0 0 50px rgba(59,130,246,.08);
+
+}
+
+.skill-card.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
 
 }
 

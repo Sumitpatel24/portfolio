@@ -65,6 +65,7 @@ const role = document.getElementById("skill-role");
 const percent = document.getElementById("skill-percent");
 const description = document.getElementById("skill-description");
 const progress = document.querySelector(".progress-fill");
+const skillCard = document.getElementById("skillCard");
 
 // ===============================
 // Update Card
@@ -80,6 +81,7 @@ function updateSkill(icon){
 
     title.textContent = skill.title;
     role.textContent = skill.role;
+    skillCard.classList.add("active");
     percent.textContent = skill.percent;
     description.textContent = skill.description;
 
@@ -91,53 +93,67 @@ function updateSkill(icon){
 
 }
 
-// ===============================
-// Events
-// ===============================
+function hideSkill(){
 
-icons.forEach(icon=>{
+    skillCard.classList.remove("active");
 
-    icon.addEventListener("mouseenter",()=>{
+    icons.forEach(item=>{
 
-        updateSkill(icon);
+        item.classList.remove("active");
 
     });
 
-    icon.addEventListener("click",()=>{
-
-        updateSkill(icon);
-
-    });
-
-});
+}
 
 // ===============================
 // Default Active
 // ===============================
 
-updateSkill(document.querySelector(".skill-icon"));
-
 const orbit = document.querySelector(".orbit");
 const ring1 = document.querySelector(".orbit-ring1");
 const ring2 = document.querySelector(".orbit-ring2");
 
-icons.forEach(icon => {
+icons.forEach(icon=>{
 
-    icon.addEventListener("mouseenter", () => {
+    icon.addEventListener("mouseenter",()=>{
 
-        orbit.style.animationPlayState = "paused";
-        ring1.style.animationPlayState = "paused";
-        ring2.style.animationPlayState = "paused";
+        orbit.style.animationPlayState="paused";
+        ring1.style.animationPlayState="paused";
+        ring2.style.animationPlayState="paused";
 
         updateSkill(icon);
 
     });
 
-    icon.addEventListener("mouseleave", () => {
+    icon.addEventListener("mouseleave",()=>{
 
-        orbit.style.animationPlayState = "running";
-        ring1.style.animationPlayState = "running";
-        ring2.style.animationPlayState = "running";
+        orbit.style.animationPlayState="running";
+        ring1.style.animationPlayState="running";
+        ring2.style.animationPlayState="running";
+
+        if(window.innerWidth>768){
+
+            hideSkill();
+
+        }
+
+    });
+
+    icon.addEventListener("click",()=>{
+
+        if(window.innerWidth<=768){
+
+            if(icon.classList.contains("active")){
+
+                hideSkill();
+
+            }else{
+
+                updateSkill(icon);
+
+            }
+
+        }
 
     });
 
@@ -175,7 +191,7 @@ for(let i=0; i<120; i++){
 // Floating Particles
 // =========================
 
-const particles = document.querySelector(".particles");
+const particles = document.querySelector(".galaxy-particles");
 
 for(let i=0;i<25;i++){
 
@@ -209,7 +225,7 @@ const nebula1 = document.querySelector(".nebula1");
 const nebula2 = document.querySelector(".nebula2");
 
 const starsLayer = document.querySelector(".stars");
-const particlesLayer = document.querySelector(".particles");
+const particlesLayer = document.querySelector(".galaxy-particles");
 
 document.addEventListener("mousemove",(e)=>{
 
