@@ -131,6 +131,8 @@ icons.forEach(icon => {
         ring1.style.animationPlayState = "running";
         ring2.style.animationPlayState = "running";
 
+        hideSkill();
+
     });
 
     icon.addEventListener("click", () => {
@@ -143,9 +145,27 @@ icons.forEach(icon => {
 
         e.preventDefault();
 
+        orbit.style.animationPlayState = "paused";
+        ring1.style.animationPlayState = "paused";
+        ring2.style.animationPlayState = "paused";
+
         updateSkill(icon);
 
     });
+
+});
+
+document.addEventListener("touchstart", (e) => {
+
+    if (!e.target.closest(".skill-icon")) {
+
+        orbit.style.animationPlayState = "running";
+        ring1.style.animationPlayState = "running";
+        ring2.style.animationPlayState = "running";
+
+        hideSkill();
+
+    }
 
 });
 
